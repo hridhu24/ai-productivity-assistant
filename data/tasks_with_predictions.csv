@@ -1,0 +1,56 @@
+task,category,predicted_category
+Pay electricity bill,Finance,Study
+Submit project report,Work,Study
+Buy groceries,Personal,Personal
+Finish machine learning assignment,Study,Work
+Prepare presentation for meeting,Work,Work
+Call bank customer care,Finance,Personal
+Go for evening walk,Personal,Personal
+Revise DBMS notes,Study,Work
+Send monthly rent,Finance,Work
+Update project tracker,Work,Work
+Do laundry,Personal,Work
+Review lecture slides,Study,Study
+Pay internet bill,Finance,Finance
+Schedule team call,Work,Work
+Cook dinner,Personal,Work
+Practice coding problems,Study,Work
+Check stock market app,Finance,Finance
+Reply to manager’s email,Work,Work
+Clean the kitchen,Personal,Work
+Read AI research paper,Study,Study
+Buy birthday gift,Personal,Personal
+File tax documents,Finance,Work
+Plan weekend trip,Personal,Personal
+Prepare slides for client,Work,Work
+Transfer money to savings,Finance,Finance
+Watch tutorial on React,Study,Work
+Organize project files,Work,Work
+Water the plants,Personal,Work
+Complete assignment submission,Study,Work
+Pay mobile phone bill,Finance,Finance
+Draft weekly status report,Work,Study
+Meditation session,Personal,Personal
+Solve LeetCode medium problem,Study,Work
+Book dentist appointment,Personal,Study
+Update resume and LinkedIn,Work,Work
+Reconcile bank statement,Finance,Work
+Attend online webinar on AI,Study,Study
+Make dentist appointment,Personal,Study
+Write unit tests for module,Work,Work
+Create monthly expense report,Finance,Work
+Practice mock interview,Study,Study
+Buy new yarn for crochet,Personal,Work
+Merge feature branch to main,Work,Work
+Pay insurance premium,Finance,Study
+Practice algorithm puzzles,Study,Study
+Go for jogging,Personal,Personal
+Prepare sprint retrospective notes,Work,Study
+Set budget for groceries,Finance,Study
+Revise network notes,Study,Study
+Cook lunch,Personal,Work
+Check emails,Work,Personal
+Transfer money to family,Finance,Personal
+Read chapter 4 of textbook,Study,Study
+Clean bedroom,Personal,Personal
+Submit expense reimbursement,Work,Study
