@@ -1,15 +1,38 @@
 import streamlit as st
 from classifier import classify_task
 
-st.set_page_config(page_title="AI Task Categorizer", layout="centered")
+st.set_page_config(page_title="AI Task Manager", layout="wide")
+st.title("📝 AI Task Manager")
 
-st.title("AI Productivity Assistant")
-st.write("Type a task below and the AI will categorize it for you!")
+# Initialize session state for tasks
+if "tasks" not in st.session_state:
+    st.session_state.tasks = {
+        "Work / Office Task": [],
+        "Study / Learning Task": [],
+        "Personal / Daily Life Task": [],
+        "Finance / Money Task": []
+    }
 
-# Input text box
+# Input box
 task_input = st.text_input("Enter your task:")
 
-if task_input:
-    result = classify_task(task_input)
-    st.subheader("Predicted Category:")
-    st.write(f"**{result['label']}** (Confidence: {result['score']:.2f})")
+# Predict button
+if st.button("Predict"):
+    if task_input.strip() == "":
+        st.warning("Please enter a task!")
+    else:
+        result = classify_task(task_input)
+        st.success(f"Predicted Category: {result['label']} ({result['score']*100:.1f}%)")
+
+        # Add task to appropriate category list
+        st.session_state.tasks[result['label']].append(task_input)
+
+# Display all tasks in categorized lists
+st.subheader("Categorized Tasks")
+for category, tasks in st.session_state.tasks.items():
+    st.write(f"**{category}:**")
+    if tasks:
+        for t in tasks:
+            st.write(f"- {t}")
+    else:
+        st.write("- No tasks yet -")

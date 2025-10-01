@@ -6,17 +6,20 @@ from transformers import pipeline
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", framework="pt")  # PyTorch for now
 
 # Define candidate categories
-CATEGORIES = ["Work", "Study", "Personal", "Finance"]
+CATEGORIES = [
+    "Work / Office Task",
+    "Study / Learning Task",
+    "Personal / Daily Life Task",
+    "Finance / Money Task"
+]
 
-def classify_task(task_text):
+def classify_task(task: str) -> dict:
     """
-    Classify a task into one of the predefined categories using zero-shot classification.
-    
-    Args:
-        task_text (str): Text description of the task.
-        
-    Returns:
-        dict: Contains 'label' (predicted category) and 'score' (confidence)
+    Classify a single task into a category.
+    Returns a dictionary: {'label': category, 'score': confidence}
     """
-    result = classifier(task_text, candidate_labels=CATEGORIES)
-    return {"label": result['labels'][0], "score": float(result['scores'][0])}
+    if not task.strip():
+        return {"label": "Unknown", "score": 0.0}
+
+    result = classifier(task, candidate_labels=CATEGORIES, multi_label=False)
+    return {"label": result['labels'][0], "score": result['scores'][0]}
